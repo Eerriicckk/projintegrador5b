@@ -22,3 +22,14 @@ export function isTokenExpired(token) {
     }
     return expired;
 }
+
+export function isAdminInToken(token) {
+    try {
+        const decodedToken = jwtDecode(token);
+        if (new Date(decodedToken.exp * 1000) < new Date())
+            return false;
+        return decodedToken.tipo === 'ADMIN'
+    } catch (error) {
+        return false;
+    }
+}

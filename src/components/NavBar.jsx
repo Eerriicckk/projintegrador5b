@@ -31,12 +31,12 @@ const NavBar = () => {
         <>
             <div className="navbar navbar-expand-md bg-primary sticky-top border-bottom">
                 <div className="container h-10">
-                    <img className="img-fluid rounded" src="/Images/Logoloja.png" alt="logo" id="baitiLogo" style={{ maxWidth: "50px" }} />
+                    <img className="img-fluid rounded" src="/Images/Logoloja.png" alt="logo" id="baitiLogo" style={{ maxWidth: "50px", marginRight:'5px' }} />
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
                         aria-controls="offcanvas" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                    <div className="offcanvas offcanvas-end bg-primary" tabIndex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasLabel"><img src="/Images/Logoloja.png" alt="logo" style={{ maxWidth: "50px" }} /> EletrolUCS</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

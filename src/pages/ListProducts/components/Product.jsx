@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import { Grid, Box, Button } from '@mui/material';
+import { Grid, Box, Button, IconButton, Tooltip } from '@mui/material';
 import { formatNumber } from "../../../utils/functions";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const CustomLink = ({ id, children }) => {
     return (<Link style={{ textDecoration: 'none' }} to={`/product/${id}`}>{children}</Link>);
 }
 
-const Product = ({ name, price, id, image, handleAddtoCart }) => {
+const Product = ({ name, price, id, image, handleAddtoCart, isAdmin, handleOpen }) => {
 
     return (
         <Grid size={{ xs: 12, sm: 4 }}>
@@ -23,8 +24,18 @@ const Product = ({ name, price, id, image, handleAddtoCart }) => {
                     "&:hover": {
                         transform: "scale(1.1)",
                     },
+                    position: 'relative',
                 }}
             >
+
+                {isAdmin &&
+                    <IconButton onClick={(e) => handleOpen(e)} style={{ padding: '0', borderRadius: '500px', position: 'absolute', right: '5px', top: '5px' }}>
+                        <Tooltip title={"Opções"}>
+                            <MoreHorizIcon />
+                        </Tooltip>
+                    </IconButton >
+                }
+
                 <Grid container spacing={0} direction={{ xs: "row", sm: "column" }}>
                     <Grid size={{ xs: 3, sm: 12 }}>
                         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>

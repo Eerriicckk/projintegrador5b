@@ -36,9 +36,6 @@ const Product = () => {
                                             </Box>
                                         </Grid>
                                         <Grid size={{ xs: 12, sm: 6 }} sx={{ display: "grid" }}>
-                                            {/* <Box>{product.nome}</Box> */}
-                                            {/* <Box>{product.descricao}</Box> */}
-                                            {/* <Box>{product.preco}</Box> */}
                                             <Box sx={{ textAlign: 'left', fontWeight: 'bold', fontSize: { xs: '22px', sm: '33px' }, color: 'black' }}>
                                                 <p>{product.nome}</p>
                                             </Box>

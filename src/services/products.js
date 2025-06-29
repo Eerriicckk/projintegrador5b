@@ -31,7 +31,55 @@ const ProductsServices = {
     AddCommentary: async (productId, commentary) => {
         try {
             const response = await instance.post(`produtos/${productId}/comentar`, { texto: commentary });
-            console.log(response)
+
+            return response;
+        } catch (error) {
+            console.error(error);
+            // throw new Error;
+        }
+    },
+    AddProduct: async (productInfo) => {
+        console.log(productInfo)
+        try {
+            const response = await instance.post(`cadastrarProdutos`,
+                {
+                    "nome": productInfo.name,
+                    "descricao": productInfo.description,
+                    "image": productInfo.image,
+                    "preco": productInfo.price,
+                    "estoque": productInfo.quantity
+                }
+            );
+
+            return response;
+        } catch (error) {
+            console.error(error);
+            // throw new Error;
+        }
+    },
+    UpdateProduct: async (productId, productInfo) => {
+        console.log(productInfo)
+        try {
+            const response = await instance.put(`produto?productId=${productId}`,
+                {
+                    "nome": productInfo.name,
+                    "descricao": productInfo.description,
+                    "image": productInfo.image,
+                    "preco": productInfo.price,
+                    "estoque": productInfo.quantity
+                }
+            );
+
+            return response;
+        } catch (error) {
+            console.error(error);
+            // throw new Error;
+        }
+    },
+    DeleteProduct: async (productId) => {
+        try {
+            const response = await instance.delete(`produto?productId=${productId}`);
+
             return response;
         } catch (error) {
             console.error(error);
