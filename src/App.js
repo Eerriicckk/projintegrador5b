@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename='/projetointegrador5b'>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
