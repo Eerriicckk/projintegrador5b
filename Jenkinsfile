@@ -1,9 +1,14 @@
 pipeline{
     agent any
+    environment {
+        IMAGE_NAME = 'projetointegrador5b'
+        IMAGE_TAG = 'latest'
+        APP_NAME = 'projetointegrador5b'
+    }
     stages{
         stage('Build'){
             steps{
-                echo '"Hello World"'
+                sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
             }
         }
         stage('Teste'){
@@ -13,7 +18,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                echo '"Deploy"'
+                sh 'sudo docker run -d --restart=unless-stopped --name projetointegrador5b -p 5175:3000 projetointegrador5b'
             }
         }
     }
