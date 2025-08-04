@@ -2,12 +2,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'aos/dist/aos.css'; 
 
-import { BrowserRouter, Routes, Route, Navigate, useNavigate, NavLink, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import PageNotFound from './pages/PageNotFound';
 import ListProducts from './pages/ListProducts/Index';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import LoginPage from './pages/Login/LoginPage';
 import NavBar from './components/NavBar';
 import AOS from 'aos';
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename='/projetointegrador5b'>
+      <BrowserRouter /*basename='/projetointegrador5b'*/>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />

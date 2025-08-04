@@ -7,7 +7,7 @@ const ProductsServices = {
             return response.data;
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     },
     GetProduct: async (productId) => {
@@ -16,7 +16,7 @@ const ProductsServices = {
             return response.data[0];
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     },
     GetCommentaries: async (productId) => {
@@ -25,7 +25,7 @@ const ProductsServices = {
             return response.data;
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     },
     AddCommentary: async (productId, commentary) => {

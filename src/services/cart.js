@@ -7,7 +7,7 @@ const CartServices = {
             return response.data.token;
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     },
     GetCart: async () => {
@@ -16,7 +16,7 @@ const CartServices = {
             return response.data;
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     },
     DeleteFromCart: async (productId = 0, limpar = false) => {
@@ -25,7 +25,7 @@ const CartServices = {
             return response.data;
         } catch (error) {
             console.error(error);
-            throw new Error;
+            throw new Error();
         }
     }
 }
